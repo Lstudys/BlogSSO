@@ -8,7 +8,7 @@
 
 <template>
     <div class="my-header">
-        <div class="logo"><img src="../../../assets/images/logo.png" alt=""></div>
+        <div class="logo"><img src="../../assets/images/logo.png" alt=""></div>
     </div>
 </template>
 
