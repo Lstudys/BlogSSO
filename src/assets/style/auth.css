@@ -1,12 +1,12 @@
 /**
  * 主页面样式
  * created by 李永晖 on 2021/11/21
- * Lasted LastEdit by 李永晖 on 2021/11/21
+ * Lasted LastEdit by 李永晖 on 2021/11/24
  */
 
  .login_page .login_box{
      height: 650px;
-     background: url() no-repeat center center;
+     background: url('../images/background.jpg') no-repeat center center;
  }
 
  .login_page .login_box .center_box{
@@ -46,4 +46,6 @@
      outline: none;
  }
 
+
+ 
  
