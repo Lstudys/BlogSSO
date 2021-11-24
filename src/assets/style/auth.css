@@ -23,10 +23,8 @@
      border-radius: 6px;
      transition: all 0.8s;
      transform: perspective(600px);
- }
+     background-color: #fff;
 
- .login_page .login_form.rotate{
-     transform: rotateY(-180deg);
  }
 
  .login_page .form_body{

@@ -17,8 +17,7 @@
                 <input type="checkbox" id="agree1" v-model="registerData.check">
                 <label for="agree1">我已阅读并同意</label><a href="javascript:;" @click="agreement == true">《用户协议》</a>
             </div>
-            <input type="submit" v-if="subState" disabled="disabled" value="提交中..." class="btn">
-            <input type="submit" v-else value="注册" class="btn">
+            <input type="submit" value="注册" class="btn">
         </form>
      </div>
 </template>
@@ -63,3 +62,16 @@ export default {
     }
 }
 </script>
+
+<style scope>
+    input[type=submit] {
+  width: 100%;
+  background-color: #EF6520;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+</style>
