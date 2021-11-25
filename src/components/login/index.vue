@@ -27,37 +27,18 @@ export default {
     data(){
         return{
             loginErrMessage:'',
-            subState:false,
-            agreement:false,
-            agreecontent:null,
             redirecturl:'',
             loginData:{
                 username:'',
                 password:''
             },
-            registerData:{
-                username:'',
-                password:'',
-                rePassword:'',
-                check:false
-            },
 
         }
     },
     methods:{
-        changeTab(num){
-            this.tab = num;
-            // let _that = this;
-            setTimeout(() => {
-                this.reverse = num;
-            }, 200);
-        },
         loginSubmit(){
 
         },
-        registerSubmit(){
-
-        }
     }
 }
 </script>
