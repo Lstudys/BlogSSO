@@ -1,3 +1,8 @@
+/**
+ * 认证的接口
+ * created by 李永晖 on 2021/11/26
+ */
+
 import request from '../utils/request.js';
 
 
@@ -12,7 +17,7 @@ const auth = {
 }
 
 export function login(data){
-    // 相当于执行了axios.post，返回一个promise对象
+    // 相当于执行了axios.post()，返回一个promise对象
     return request({
         header,
         auth,
