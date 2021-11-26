@@ -4993,6 +4993,11 @@ javascript-stringify@^2.0.1:
   resolved "https://registry.npm.taobao.org/javascript-stringify/download/javascript-stringify-2.1.0.tgz#27c76539be14d8bd128219a2d731b09337904e79"
   integrity sha1-J8dlOb4U2L0Sghmi1zGwkzeQTnk=
 
+js-cookie@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.nlark.com/js-cookie/download/js-cookie-3.0.1.tgz#9e39b4c6c2f56563708d7d31f6f5f21873a92414"
+  integrity sha1-njm0xsL1ZWNwjX0x9vXyGHOpJBQ=
+
 js-message@1.0.7:
   version "1.0.7"
   resolved "https://registry.nlark.com/js-message/download/js-message-1.0.7.tgz#fbddd053c7a47021871bb8b2c95397cc17c20e47"
@@ -8209,6 +8214,11 @@ vue@^2.6.11:
   version "2.6.14"
   resolved "https://registry.npmmirror.com/vue/download/vue-2.6.14.tgz?cache=0&sync_timestamp=1636947969556&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fvue%2Fdownload%2Fvue-2.6.14.tgz#e51aa5250250d569a3fbad3a8a5a687d6036e235"
   integrity sha1-5RqlJQJQ1Wmj+606ilpofWA24jU=
+
+vuex@^3.6.2:
+  version "3.6.2"
+  resolved "https://registry.nlark.com/vuex/download/vuex-3.6.2.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fvuex%2Fdownload%2Fvuex-3.6.2.tgz#236bc086a870c3ae79946f107f16de59d5895e71"
+  integrity sha1-I2vAhqhww655lG8QfxbeWdWJXnE=
 
 watchpack-chokidar2@^2.0.1:
   version "2.0.1"
