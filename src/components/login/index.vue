@@ -37,7 +37,7 @@ export default {
     },
     methods:{
         loginSubmit(){
-
+            this.$store.dispatch('UserLogin',this.loginData)
         },
     }
 }

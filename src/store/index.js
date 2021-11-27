@@ -4,9 +4,11 @@ import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
-const store = new Vuex.store({
-    module:{
-        
+import auth from './auth/index.js';
+
+const store = new Vuex.Store({
+    modules:{
+        auth:auth,
     }
 })
 
