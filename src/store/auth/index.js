@@ -34,7 +34,8 @@ const actions = {
         const {username,password} = data;
         login({username:username,password:password}).then(
             response =>{
-                console.log(response + '-------');
+                const data = JSON.stringify(response);
+                console.log(data + '-------');
             }
         )
     }

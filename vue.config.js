@@ -1,6 +1,6 @@
 /**
  * 配置跨域代理等信息
- * created by 李永晖 on 2021/11/26
+ * created by 李永晖 on 2021/11/27
  */
 
 module.exports = {
