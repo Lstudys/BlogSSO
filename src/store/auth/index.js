@@ -9,7 +9,7 @@ import {cookie, key} from '../../utils/cookie.js';
 
 // 初始化时获取cookie信息
 const state = {
-    userInfo:cookie.get(key.userInfokey) ? JSON.parse(cookie.get(key.userInfokey)):null,
+    userInfo:cookie.get(key.userInfokey) ? cookie.get(key.userInfokey):null,
     accessToken: cookie.get(key.accessTokenKey),
     refreshToken: cookie.get(key.refreshTokenKey)
 }
@@ -45,7 +45,7 @@ const mutations = {
 const actions = {
 
 
-    UserLogin({commit},userData){
+    userLogin({commit},userData){
         const {username,password} = userData;
         login({username:username,password:password}).then(
             response =>{
