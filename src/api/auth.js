@@ -1,6 +1,6 @@
 /**
  * 认证的接口
- * created by 李永晖 on 2021/11/26
+ * created by 李永晖 on 2021/11/28
  */
 
 import request from '../utils/request.js';
@@ -43,6 +43,17 @@ export function register(data){
         auth,
         url:'register',
         method:'POST',
+        params:data
+    })
+}
+
+
+export function userLoginout(data){
+    return request({
+        header,
+        auth,
+        url:'loginout',
+        method:'GET',
         params:data
     })
 }

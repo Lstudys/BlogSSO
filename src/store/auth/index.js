@@ -1,9 +1,9 @@
 /**
  * vuex登录认证模块
- * created by 李永晖 on 2021/11/27
+ * created by 李永晖 on 2021/11/28
  */
 
-import {login} from '../../api/auth.js';
+import {login,userLoginout} from '../../api/auth.js';
 
 import {cookie, key} from '../../utils/cookie.js';
 
@@ -57,6 +57,20 @@ const actions = {
             console.log(error);
             commit('RESET_USER_STATE')
         })
+    },
+
+    loginout({commit,state},redirecturl){
+        userLoginout(state.accessToken).then(
+            response =>{
+                commit('RESET_USER_STATE');
+                window.location.href = redirecturl;
+                console.log(response);
+            }
+        ).catch(
+            error =>{
+                console.log(error);
+            }
+        )
     }
 }
 
