@@ -13,7 +13,7 @@
             <input type="text" v-model="loginData.username" placeholder="用户名..." autocomplete="off">
             <input type="password" v-model="loginData.password" placeholder="密码..." autocomplete="off">
             <div class="err_message">{{loginErrMessage}}</div>
-            <input type="submit" value="登录" @submit="loginSubmit" class="btn">
+            <input v-bind:class="{logining:btnClass.isLogining}" type="submit" v-bind:value="btnValue" v-bind:disabled="btnDisable" @submit="loginSubmit" class="btn">
         </form>
     </div>
 </template>
@@ -22,22 +22,37 @@
 export default {
     name:'LoginForm',
     mounted() {
-        console.log('登陆组件');
+        if(this.$route.query.redirecturl != ''){
+            this.redirecturl = this.$route.query.redirecturl;
+        }
     },
     data(){
         return{
             loginErrMessage:'',
-            redirecturl:'',
+            redirecturl:'http://localhost:3000/',
             loginData:{
                 username:'',
                 password:''
             },
-
+            btnValue:'登录',
+            btnDisable:false,
+            btnClass:{
+                isLogining:false
+            }
         }
     },
     methods:{
         loginSubmit(){
+            if(this.btnClass.isLogining){
+                alert('登录中');
+            }
+            this.btnClass.isLogining = true;
+            this.btnValue = '登录中...';
+            this.btnDisable = true
             this.$store.dispatch('userLogin',this.loginData)
+            setTimeout(() => {
+                window.location.href = this.redirecturl;
+            }, 3000);
         },
     }
 }
@@ -53,5 +68,10 @@ export default {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.logining{
+    background-color: #ccc;
+    cursor:progress
 }
 </style>

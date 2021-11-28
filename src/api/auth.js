@@ -26,3 +26,23 @@ export function login(data){
         params:data
     })
 }
+
+
+export function testRegisterUsername(username){
+    return request({
+        auth,
+        url:`register/${username}`,
+        method:'GET'
+    })
+}
+
+
+export function register(data){
+    return request({
+        header,
+        auth,
+        url:'register',
+        method:'POST',
+        params:data
+    })
+}

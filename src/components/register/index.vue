@@ -23,6 +23,7 @@
 </template>
 
 <script>
+import {register} from '../../api/auth.js';
 export default {
     name:'RegisterForm',
     data(){
@@ -40,7 +41,11 @@ export default {
     },
     methods:{
         registerSubmit(){
-
+            register(this.registerData).then(
+                response =>{
+                    console.log(response);
+                }
+            )
         }
     }
 }
