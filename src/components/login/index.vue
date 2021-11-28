@@ -22,7 +22,7 @@
 export default {
     name:'LoginForm',
     mounted() {
-        if(this.$route.query.redirecturl != ''){
+        if(this.$route.query.redirecturl){
             this.redirecturl = this.$route.query.redirecturl;
         }
     },
@@ -49,8 +49,9 @@ export default {
             this.btnClass.isLogining = true;
             this.btnValue = '登录中...';
             this.btnDisable = true
-            this.$store.dispatch('userLogin',this.loginData)
+            this.$store.dispatch('userLogin',this.loginData);
             setTimeout(() => {
+                console.log(this.redirecturl + '===url');
                 window.location.href = this.redirecturl;
             }, 3000);
         },
