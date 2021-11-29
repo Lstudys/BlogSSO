@@ -3,7 +3,7 @@
 *  @Author: 李永晖
 *  @CreatedDate:2021/11/24
 *  @LastEditors: 李永晖
-*  @LastEditTime: 2021/11/28
+*  @LastEditTime: 2021/11/29
 -->
 
 
@@ -51,7 +51,6 @@ export default {
             this.btnDisable = true
             this.$store.dispatch('userLogin',this.loginData);
             setTimeout(() => {
-                console.log(this.redirecturl + '===url');
                 window.location.href = this.redirecturl;
             }, 3000);
         },
