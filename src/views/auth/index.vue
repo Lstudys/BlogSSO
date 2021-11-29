@@ -3,7 +3,7 @@
 *  @Author: 李永晖
 *  @CreatedDate:2021/11/21
 *  @LastEditors: 李永晖
-*  @LastEditTime: 2021/11/24
+*  @LastEditTime: 2021/11/29
 -->
 
 <template>
@@ -13,11 +13,11 @@
                 <div class= "login_form" >
                     <!-- 登录、注册tab选项 -->
                 <div class="linkBtn">
-                    <div class="fl tab" @click="changeTab(1)">
-                        <router-link to="/login">登录</router-link>
+                    <div class="fl tab">
+                        <router-link class="formbtn" to="/login">登录</router-link>
                     </div>
-                    <div class="fl tab" @click="changeTab(2)">
-                        <router-link to="/register">注册</router-link>
+                    <div class="fl tab">
+                        <router-link class="formbtn" to="/register">注册</router-link>
                     </div>
                 </div>
                 <router-view></router-view>
@@ -55,11 +55,12 @@ export default {
     .linkBtn div:nth-child(2){
         margin-right: 120px;
     }
-    a{
+    .formbtn{
         text-decoration: none;
         color: #000;
     }
-    a:hover{
+    .formbtn:hover{
         color: coral;
+        text-decoration: none;
     }
 </style>

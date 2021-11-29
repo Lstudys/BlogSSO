@@ -3,7 +3,7 @@
  * created by 李永晖 on 2021/11/28
  */
 
-import {login,userLoginout} from '../../api/auth.js';
+import {login,userLoginout,refreshToken} from '../../api/auth.js';
 
 import {cookie, key} from '../../utils/cookie.js';
 
@@ -44,7 +44,7 @@ const mutations = {
 
 const actions = {
 
-
+    // 登录
     userLogin({commit},userData){
         const {username,password} = userData;
         login({username:username,password:password}).then(
@@ -59,6 +59,7 @@ const actions = {
         })
     },
 
+    // 退出登录
     loginout({commit,state},redirecturl){
         userLoginout(state.accessToken).then(
             response =>{
@@ -71,6 +72,28 @@ const actions = {
                 console.log(error);
             }
         )
+    },
+
+    // 刷新访问令牌
+    refreshToken({commit,state}){
+       return new Promise((resolve,reject)=>{
+           if(!state.refreshToken){
+               reject();
+           }
+           refreshToken(state.refreshToken).then(
+            response =>{
+                const {data} = response;
+                commit('SET_USER_STATE',data);
+                // console.log('刷新完成');
+                resolve();
+            }
+        ).catch(
+            error =>{
+                reject();
+                console.log(error);
+            }
+        )
+       });
     }
 }
 

@@ -57,3 +57,15 @@ export function userLoginout(data){
         params:data
     })
 }
+
+export function refreshToken(refreshToken){
+    return request({
+        header,
+        auth,
+        url:'refreshToken',
+        method:'GET',
+        params:{
+            refreshToken
+        }
+    })
+}
