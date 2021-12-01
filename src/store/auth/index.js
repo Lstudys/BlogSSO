@@ -18,14 +18,15 @@ const mutations = {
 
     // 设置用户状态
     SET_USER_STATE(states = state,{userInfo,access_token,refresh_token}){
-        console.log(userInfo);
        states.userInfo = userInfo;
        states.accessToken = access_token;
        states.refreshToken = refresh_token;
 
-       cookie.set(key.userInfokey,userInfo);
+       // 把userInfo转换为JSON对象，否则存储时会乱码
+       cookie.set(key.userInfokey,JSON.stringify(userInfo));
        cookie.set(key.accessTokenKey,access_token);
        cookie.set(key.refreshTokenKey,refresh_token);
+    //    console.log('user',{...cookie.get(key.userInfokey)});
     },
 
     // 重置用户状态
@@ -50,8 +51,8 @@ const actions = {
         login({username:username,password:password}).then(
             response =>{
                 const {data} = response;
-                // console.log(JSON.stringify(response));
                 commit('SET_USER_STATE',data);
+                console.log('userinfo',data.userInfo);
             }
         ).catch(error =>{
             console.log(error);

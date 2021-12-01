@@ -16,7 +16,7 @@ class CookieClass {
         this.domain = process.env.VUE_APP_COOKIE_DOMAIN;
         this.expireTime = 30;
     }
-    set(key,value,expires,path){
+    set(key,value,expires,path = '/'){
         CookieClass.checkKey(key);
         Cookies.set(key,value,{expires: expires || this.expireTime, path:path,domain:this.domain});
     }
