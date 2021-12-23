@@ -9,9 +9,9 @@ import {cookie, key} from '../../utils/cookie.js';
 
 // 初始化时获取cookie信息
 const state = {
-    userInfo:cookie.get(key.userInfokey) ? cookie.get(key.userInfokey):null,
-    accessToken: cookie.get(key.accessTokenKey),
-    refreshToken: cookie.get(key.refreshTokenKey)
+    userInfo:cookie.get(key.userInfokey) ? cookie.get(key.userInfokey) : null,
+    accessToken: cookie.get(key.accessTokenKey) ? cookie.get(key.accessTokenKey) : null,
+    refreshToken: cookie.get(key.refreshTokenKey) ? cookie.get(key.refreshTokenKey) : null
 }
 
 const mutations = {
